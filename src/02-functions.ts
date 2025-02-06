@@ -65,3 +65,20 @@ function highestExtension(cs: Colleague[]): Colleague {
   
   console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
   console.log(findFriends(friends, (friend) => friend.age < 35));
+
+  function addInterest(friend: Friend, newInterest: string): string[] {
+    if (!friend.interests) {
+        // 如果 interests 未定义，则初始化为空数组
+        friend.interests = [];
+    }
+    
+    // 只有当新兴趣不存在时才添加，避免重复
+    if (!friend.interests.includes(newInterest)) {
+        friend.interests.push(newInterest);
+    }
+
+    return friend.interests;
+}
+
+// **2. 测试 `addInterest`**
+console.log(addInterest(friends[1], 'Politics'));
