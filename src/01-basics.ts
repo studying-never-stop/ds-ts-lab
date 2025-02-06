@@ -30,6 +30,11 @@ interface Colleague {
         extension: number;
     }
 }
+
+interface ColleagueHistory {
+    current: Colleague[],
+    former: Colleague[]
+  }
   
   //   -------------------
   const colleague1 = {
@@ -58,7 +63,7 @@ interface Colleague {
       extension: 125,
     },
   };
-  const colleagues = {
+  export const colleagues : ColleagueHistory = {
     current: [colleague1, colleague2, colleague3],
     former: [],
   };
